@@ -19,7 +19,6 @@ void loop(){
 
   if (Serial1.available()) {              // si les données sont dispo
     delay(100);                           // laisser du temps pour que le message arrive
-    lcd.setCursor(0, 0);                  //
     BTstr = "";
     while (Serial1.available() > 0)     // tant que les caractères arrivent sur la liaison série 1
     {
@@ -44,7 +43,37 @@ void loop(){
 
 
   if (combat) {
-   
+    if (BTstr.substring(0, 4) == "[AA]") { // Flèche haut avec
+        avance()
+    }
+
+    if (BTstr.substring(0, 4) == "[BB]") {
+        recule()
+    }
+
+    if (BTstr.substring(0, 4) == "[GG]") {
+    
+    }
+
+    if (BTstr.substring(0, 4) == "[DD]") {
+    
+    }
+
+    if (BTstr.substring(0, 4) == "[E1]") {
+    
+    }
+
+    if (BTstr.substring(0, 4) == "[E2]") {
+    
+    }
+
+    if (BTstr.substring(0, 4) == "[E3]") {
+    
+    }
+    
+    if (BTstr.substring(0, 4) == "[E4]") {
+    
+    }
   } else {
     // Mode course
   }
